@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+var mouseDown;
+onmousedown = function(e){
+	mouseDown = true;
+}
+onmouseup = function(e){
+	mouseDown = false;
+}
+onmousemove = function(e){
+	if (mouseDown==true){
+		console.log("mouse location:", e.clientX, e.clientY);
+		var color = '#000000';
+		var size = '8px';
+		$("body").append(
+          $('<div></div>')
+              .css('position', 'absolute')
+              .css('top', e.clientY + 'px')
+              .css('left', e.clientX + 'px')
+              .css('width', size)
+              .css('height', size)
+              .css('background-color', color));
+	}
+}
+</script>
+
+
+
+<body>
+
+</body>
+</html>
